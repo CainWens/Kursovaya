@@ -1,0 +1,17 @@
+{
+    "name": "geekbrains/cainwens",
+    "autoload": {
+        "psr-4": {
+            "Geekbrains\\Cainwens\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CainWens",
+            "email": "makss314@gmail.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.23"
+    }
+}
