@@ -8,14 +8,14 @@ use Geekbrains\Cainwens\Post;
 class Comment
 {
     private int $id;
-    private int $idAuthor;
+    private User $idAuthor;
     private int $idPost;
     private User $author;
     private string $text;
 
     public function __construct(
         int $id,
-        int $idAuthor,
+        User $idAuthor,
         int $idPost,
         User $author,
         string $text
