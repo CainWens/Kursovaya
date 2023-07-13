@@ -24,7 +24,7 @@ class User
 
     public function __toString(): string
     {
-        return $this->firstname . ' ' . $this->lastname . PHP_EOL;
+        return $this->firstname . ' ' . $this->lastname;
     }
 
 

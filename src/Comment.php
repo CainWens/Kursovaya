@@ -8,15 +8,15 @@ use Geekbrains\Cainwens\Post;
 class Comment
 {
     private int $id;
-    private User $idAuthor;
-    private Post $idPost;
+    private int $idAuthor;
+    private int $idPost;
     private User $author;
     private string $text;
 
     public function __construct(
         int $id,
-        User $idAuthor,
-        Post $idPost,
+        int $idAuthor,
+        int $idPost,
         User $author,
         string $text
     ) {
@@ -34,6 +34,6 @@ class Comment
      */
     public function __toString(): string
     {
-        return $this->text;
+        return $this->author . ' Комментирует > ' . $this->text;
     }
 }
