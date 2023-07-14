@@ -27,10 +27,6 @@ class User
         return $this->firstname . ' ' . $this->lastname;
     }
 
-
-    /**
-     * Get the value of id
-     */
     public function getId()
     {
         return $this->id;
