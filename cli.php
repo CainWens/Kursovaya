@@ -3,9 +3,22 @@
 use Geekbrains\Cainwens\Comment;
 use Geekbrains\Cainwens\Exeptions\ArgvNotFound;
 use Geekbrains\Cainwens\Post;
+use Geekbrains\Cainwens\Repositories\SaveArgv;
 use Geekbrains\Cainwens\User;
 
 include __DIR__ . "/vendor/autoload.php";
+
+// try {
+//     $av = new SaveArgv();
+//     $av->get($argv[1]);
+// } catch (ArgvNotFound $e) {
+//     echo $e->getMessage();
+// } catch (Exception $e) {
+//     echo "Что-то совсем не так" . PHP_EOL;
+//     echo $e->getMessage();
+// }
+
+
 
 $faker = Faker\Factory::create('ru_RU');
 $gender = 'male';
@@ -33,7 +46,7 @@ try {
         }
     }
 } catch (ArgvNotFound $e) {
-    echo "Не задан параметр";
+    echo $e->getMessage();
 } catch (Exception $e) {
     echo "Что-то совсем не так";
     echo $e->getMessage();
