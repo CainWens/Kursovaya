@@ -6,8 +6,7 @@ use Geekbrains\Cainwens\User;
 
 class Post
 {
-    private int $id;
-    private int $idAuthor;
+    private UUID $uuid;
     private User $author;
     private string $title;
     private string $text;
@@ -15,21 +14,18 @@ class Post
 
     /**
      * Summary of __construct
-     * @param int $id id статьи
-     * @param int $idAuthor id автора
+     * @param UUID $uuid id статьи
      * @param \Geekbrains\Cainwens\User $author автор
      * @param string $title заголовок
      * @param string $text текст статьи
      */
     public function __construct(
-        int $id,
-        int $idAuthor,
+        UUID $uuid,
         User $author,
         string $title,
         string $text
     ) {
-        $this->id = $id;
-        $this->idAuthor = $idAuthor;
+        $this->uuid = $uuid;
         $this->author = $author;
         $this->title = $title;
         $this->text = $text;
@@ -37,22 +33,38 @@ class Post
 
     public function __toString(): string
     {
-        return $this->title . '>>>' . $this->text . PHP_EOL;
+        return 'Запись у ' . $this->author->fullName() . PHP_EOL . $this->title . ' >>> ' . $this->text . PHP_EOL;
     }
 
     /**
      * Get the value of idAuthor
      */
-    public function getIdAuthor(): string
+    public function getAuthor(): string
     {
-        return $this->idAuthor;
+        return $this->author->uuid();
     }
 
     /**
-     * Get the value of id
+     * Get the value of uuid
      */
-    public function getId()
+    public function uuid()
     {
-        return $this->id;
+        return $this->uuid;
+    }
+
+    /**
+     * Get the value of title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Get the value of text
+     */
+    public function getText()
+    {
+        return $this->text;
     }
 }
